@@ -12,15 +12,15 @@ body {
 }
 
 .gradient {
-    width: 100%;
     /*Тут высота блока*/
-    height: 100vh;
+    width: 100%;
     /*Тут ширина*/
+    height: 100vh;
     background: linear-gradient(149deg, rgba(24, 187, 156, 1) 0%, rgba(106, 57, 175, 1) 42%, rgba(187, 24, 148, 1) 72%, rgba(115, 53, 134, 1) 100%);
-    animation: gradient 10s infinite linear;
     /*10s - скорость анимации*/
-    background-size: 400%;
+    animation: gradient 10s infinite linear;
     /* Можно менять и подбирать интенсивность */
+    background-size: 400%;
 }
 
 @keyframes gradient {
@@ -39,12 +39,16 @@ body {
 
 
 .box1 {
+    /*Тут размер сраза углов. Если 0px, то углы не срезанны*/
     --top-left: 10px;
-    --bottom-right: 10px;
-    --bottom-left: 10px;
     --top-right: 10px;
+    --bottom-left: 10px;
+    --bottom-right: 10px;
+    /*Срехать все углы одинаково*/
     --all: 0px;
+    /*Цвет бордера всей фигуры*/
     --b: #fadd02;
+    /*Добавить картинуку на бэкграунд*/
     /*--img:url();*/
 }
 
@@ -52,16 +56,20 @@ body {
     width: 300px;
     height: 500px;
     display: inline-block;
-    margin: 10px;
+    margin: 1px;
+    /*Толщина бордера фигуры*/
     border: 1px solid var(--b);
     background:
         linear-gradient(45deg, var(--b) 0 calc(var(--bottom-left, var(--all)) + 1px), transparent 0) bottom left /50% 50%,
+        /*Толщина бордера угала 1px*/
         linear-gradient(-45deg, var(--b) 0 calc(var(--bottom-right, var(--all)) + 1px), transparent 0) bottom right/50% 50%,
         linear-gradient(135deg, var(--b) 0 calc(var(--top-left, var(--all)) + 1px), transparent 0) top left /50% 50%,
         linear-gradient(-135deg, var(--b) 0 calc(var(--top-right, var(--all)) + 1px), transparent 0) top right /50% 50%,
+        /*Цвет бэкграунда фигуры*/
         var(--img, #4c4cd7);
     background-origin: border-box;
     background-repeat: no-repeat;
+    /*Маска которая делает обрезанные углы*/
     -webkit-mask:
         linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left,
         linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right,
