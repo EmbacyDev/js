@@ -6,11 +6,37 @@
 
 body {
     height: 100vh;
-    background: radial-gradient(circle, skyblue, steelblue);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.gradient {
+    width: 100%;
+    /*Тут высота блока*/
+    height: 100vh;
+    /*Тут ширина*/
+    background: linear-gradient(149deg, rgba(24, 187, 156, 1) 0%, rgba(106, 57, 175, 1) 42%, rgba(187, 24, 148, 1) 72%, rgba(115, 53, 134, 1) 100%);
+    animation: gradient 10s infinite linear;
+    /*10s - скорость анимации*/
+    background-size: 400%;
+    /* Можно менять и подбирать интенсивность */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+
+    50% {
+        background-position: 20% 100%;
+    }
+
+    100% {
+        background-position: 80% 0%;
+    }
+}
+
 
 .box1 {
     --top-left: 10px;
@@ -18,7 +44,7 @@ body {
     --bottom-left: 10px;
     --top-right: 10px;
     --all: 0px;
-    --b: #facd02;
+    --b: #fadd02;
     /*--img:url();*/
 }
 
