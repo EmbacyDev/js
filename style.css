@@ -61,29 +61,29 @@ body {
   margin: 1px;
   padding: 10px;
   /*Толщина бордера фигуры*/
-  border: 1px solid var(--b);
+  border: 2px solid var(--b);
   background: linear-gradient(
         45deg,
-        var(--b) 0 calc(var(--bottom-left, var(--all)) + 1px),
+        var(--b) 0 calc(var(--bottom-left, var(--all)) + 2px),
         transparent 0
       )
       bottom left / 50% 50%,
     /*Толщина бордера угала 1px*/
       linear-gradient(
         -45deg,
-        var(--b) 0 calc(var(--bottom-right, var(--all)) + 1px),
+        var(--b) 0 calc(var(--bottom-right, var(--all)) + 2px),
         transparent 0
       )
       bottom right/50% 50%,
     linear-gradient(
         135deg,
-        var(--b) 0 calc(var(--top-left, var(--all)) + 1px),
+        var(--b) 0 calc(var(--top-left, var(--all)) + 2px),
         transparent 0
       )
       top left / 50% 50%,
     linear-gradient(
         -135deg,
-        var(--b) 0 calc(var(--top-right, var(--all)) + 1px),
+        var(--b) 0 calc(var(--top-right, var(--all)) + 2px),
         transparent 0
       )
       top right / 50% 50%,
@@ -130,8 +130,7 @@ body {
 }
 
 .calculator-w {
-  padding: 5px;
-  width: 100%;
+  width: 300px;
   padding: 10px;
   text-align: center;
 }
@@ -159,7 +158,9 @@ body {
   font-size: 16px;
   border-radius: 2px;
   margin-bottom: 5px;
+  padding: 5px;
 }
+
 
 .reset {
   position: relative;
