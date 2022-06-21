@@ -1,94 +1,220 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gradient {
-    /*Тут высота блока*/
-    width: 100%;
-    /*Тут ширина*/
-    height: 100vh;
-    background: linear-gradient(149deg, rgba(24, 187, 156, 1) 0%, rgb(85, 57, 175) 42%, rgba(187, 24, 148, 1) 72%, rgba(115, 53, 134, 1) 100%);
-    /*10s - скорость анимации*/
-    animation: gradient 10s infinite linear;
-    /* Можно менять и подбирать интенсивность */
-    background-size: 400%;
+  /*Тут высота блока*/
+  width: 100%;
+  /*Тут ширина*/
+  height: 100vh;
+  background: linear-gradient(
+    149deg,
+    rgba(24, 187, 156, 1) 0%,
+    rgb(85, 57, 175) 42%,
+    rgba(187, 24, 148, 1) 72%,
+    rgba(115, 53, 134, 1) 100%
+  );
+  /*10s - скорость анимации*/
+  animation: gradient 10s infinite linear;
+  /* Можно менять и подбирать интенсивность */
+  background-size: 400%;
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 80% 0%;
-    }
+  0% {
+    background-position: 80% 0%;
+  }
 
-    50% {
-        background-position: 20% 100%;
-    }
+  50% {
+    background-position: 20% 100%;
+  }
 
-    100% {
-        background-position: 80% 0%;
-    }
+  100% {
+    background-position: 80% 0%;
+  }
 }
 
-
 .box1 {
-    /*Тут размер сраза углов. Если 0px, то углы не срезанны*/
-    --top-left: 10px;
-    --top-right: 10px;
-    --bottom-left: 10px;
-    --bottom-right: 10px;
-    /*Срехать все углы одинаково*/
-    --all: 0px;
-    /*Цвет бордера всей фигуры*/
-    --b: #fadd02;
-    /*Добавить картинуку на бэкграунд*/
-    /*--img:url();*/
+  /*Тут размер сраза углов. Если 0px, то углы не срезанны*/
+  --top-left: 10px;
+  --top-right: 10px;
+  --bottom-left: 10px;
+  --bottom-right: 10px;
+  /*Срехать все углы одинаково*/
+  --all: 0px;
+  /*Цвет бордера всей фигуры*/
+  --b: #fadd02;
+  /*Добавить картинуку на бэкграунд*/
+  /*--img:url();*/
 }
 
 .box {
-    width: 300px;
-    height: 500px;
-    display: inline-block;
-    margin: 1px;
-    padding: 10px;
-    /*Толщина бордера фигуры*/
-    border: 1px solid var(--b);
-    background:
-        linear-gradient(45deg, var(--b) 0 calc(var(--bottom-left, var(--all)) + 1px), transparent 0) bottom left /50% 50%,
-        /*Толщина бордера угала 1px*/
-        linear-gradient(-45deg, var(--b) 0 calc(var(--bottom-right, var(--all)) + 1px), transparent 0) bottom right/50% 50%,
-        linear-gradient(135deg, var(--b) 0 calc(var(--top-left, var(--all)) + 1px), transparent 0) top left /50% 50%,
-        linear-gradient(-135deg, var(--b) 0 calc(var(--top-right, var(--all)) + 1px), transparent 0) top right /50% 50%,
-        /*Цвет бэкграунда фигуры*/
-        var(--img, #4c4cd7);
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    /*Маска которая делает обрезанные углы*/
-    -webkit-mask:
-        linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left,
-        linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right,
-        linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0) top left,
-        linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0) top right;
-    -webkit-mask-size: 50.5% 50.5%;
-    -webkit-mask-repeat: no-repeat;
-    mask: linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left,
-        linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right,
-        linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0) top left,
-        linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0) top right;
-    mask-size: 50.5% 50.5%;
-    mask-repeat: no-repeat;
+  margin: 1px;
+  padding: 10px;
+  /*Толщина бордера фигуры*/
+  border: 1px solid var(--b);
+  background: linear-gradient(
+        45deg,
+        var(--b) 0 calc(var(--bottom-left, var(--all)) + 1px),
+        transparent 0
+      )
+      bottom left / 50% 50%,
+    /*Толщина бордера угала 1px*/
+      linear-gradient(
+        -45deg,
+        var(--b) 0 calc(var(--bottom-right, var(--all)) + 1px),
+        transparent 0
+      )
+      bottom right/50% 50%,
+    linear-gradient(
+        135deg,
+        var(--b) 0 calc(var(--top-left, var(--all)) + 1px),
+        transparent 0
+      )
+      top left / 50% 50%,
+    linear-gradient(
+        -135deg,
+        var(--b) 0 calc(var(--top-right, var(--all)) + 1px),
+        transparent 0
+      )
+      top right / 50% 50%,
+    /*Цвет бэкграунда фигуры*/ var(--img, #4c4cd7);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  /*Маска которая делает обрезанные углы*/
+  -webkit-mask: linear-gradient(
+        45deg,
+        transparent 0 var(--bottom-left, var(--all)),
+        #fff 0
+      )
+      bottom left,
+    linear-gradient(
+        -45deg,
+        transparent 0 var(--bottom-right, var(--all)),
+        #fff 0
+      )
+      bottom right,
+    linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0)
+      top left,
+    linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0)
+      top right;
+  -webkit-mask-size: 50.5% 50.5%;
+  -webkit-mask-repeat: no-repeat;
+  mask: linear-gradient(
+        45deg,
+        transparent 0 var(--bottom-left, var(--all)),
+        #fff 0
+      )
+      bottom left,
+    linear-gradient(
+        -45deg,
+        transparent 0 var(--bottom-right, var(--all)),
+        #fff 0
+      )
+      bottom right,
+    linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0)
+      top left,
+    linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0)
+      top right;
+  mask-size: 50.5% 50.5%;
+  mask-repeat: no-repeat;
+}
+
+.calculator-w {
+  padding: 5px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.calculator {
+  width: 240px;
+  height: auto;
+  display: inline-block;
+}
+
+.block-button {
+  display: flex;
+  margin-top: 5px;
+}
+
+.main-btn {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: 60px 60px 60px;
 }
 
 .input {
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  font-size: 16px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
 
+.reset {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 2.5em;
+  line-height: 2.5em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  text-shadow: 0 -1px 1px #777;
+  color: #fff;
+  outline: none;
+  border: 2px solid #f64c2b;
+  border-radius: 5px;
+  box-shadow: 0 0 0 60px rgba(0, 0, 0, 0) inset, 0.1em 0.1em 0.2em #800;
+  background: linear-gradient(#fb9575, #f45a38 48%, #ea1502 52%, #f02f17);
+}
+.reset:active {
+  top: 0.1em;
+  left: 0.1em;
+  box-shadow: 0 0 0 60px rgba(0, 0, 0, 0.05) inset;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  font-weight: 700;
+  background: rgb(255, 212, 3)
+    linear-gradient(rgb(255, 212, 3), rgb(248, 157, 23));
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0),
+    inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0);
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  border: #4c4cd7 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+.btn:hover {
+  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0),
+    inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0.5);
+}
+.btn:active {
+  font-weight: 400;
+  border-color: rgb(127, 114, 2);
+  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 0 0 60px rgba(145, 145, 9, 0.45);
+}
+
+.summ {
+  width: 100%;
 }
