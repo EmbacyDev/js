@@ -2,7 +2,7 @@
 // когда окно загрузится, сработает метод window.onLoad
 window.addEventListener('load', function load() {
     const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    
+
     const input = document.getElementById('mainInput')
     const reset = document.getElementById('reset')
     const numbBtn = document.querySelectorAll('.numb')
