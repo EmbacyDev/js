@@ -11,17 +11,17 @@ window.addEventListener('load', function load() {
         console.log(arr[i])
     }
 
-    numbBtn.forEach((element) => {
-        element.addEventListener('click', function numbClick() {
-            console.log(element)
-        })
-    })
-
     // numbBtn.forEach((element) => {
     //     element.addEventListener('click', function numbClick() {
-    //         input.value = element.innerText
+    //         console.log(element)
     //     })
     // })
+
+    numbBtn.forEach((element) => {
+        element.addEventListener('click', function numbClick() {
+            input.value = element.innerText
+        })
+    })
 
     reset.addEventListener('click', resetCalc)
     function resetCalc() {
